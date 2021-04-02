@@ -1,4 +1,9 @@
-<p *ngIf="motivationalQuote">
-  "{{motivationalQuote.text }}"
-  > "{{motivationalQuote.author }}"
-</p>
+<article class="max-w-md" *ngIf="motivationalQuote">
+  <p class="text-gray-500">
+    <!--  todo akicha: reuse existing helper classes  -->
+    <span class="text-4xl">"</span>
+    <span class="text-3xl">{{motivationalQuote.text }}</span>
+    <span class="text-4xl">"</span>
+  </p>
+  <p class="text-base mt-2 text-gray-500">{{motivationalQuote.author }}</p>
+</article>

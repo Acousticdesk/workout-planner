@@ -32,6 +32,7 @@ export class MotivationalQuotesService {
     return of(getRandomElement(this.motivationalQuotes) as {text: string, author: string});
   }
 
+  // todo akicha: save only the random quote, discard all others
   getMotivationalQuotes(): Observable<{ text: string, author: string }[]> {
     const quotesObservable$ = this.http.get<{ text: string, author: string }[]>('https://type.fit/api/quotes');
 

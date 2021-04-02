@@ -1,21 +1,25 @@
-<h1>{{brandName}}</h1>
+<main class="container mx-auto py-4">
+  <h1 class="mb-8 text-2xl">{{brandName}}</h1>
 
-<h2>My week progress</h2>
+  <app-motivational-quotes></app-motivational-quotes>
 
-<!-- todo akicha: add a UI framework (Tailwind|Angular Material) -->
-<!-- todo akicha: save progress to local storage on change -->
+  <h2 class="mt-8 text-xl">My week progress</h2>
 
-<app-motivational-quotes></app-motivational-quotes>
+  <!-- todo akicha: add a UI framework (Tailwind|Angular Material) -->
+  <!-- todo akicha: save progress to local storage on change -->
 
-<form [formGroup]="weekProgressForm">
-  <ul>
-    <li *ngFor="let muscleGroup of muscleGroups">
-      <label>
-        <input type="checkbox" [formControlName]="muscleGroup">
-        {{muscleGroup}}
-      </label>
-    </li>
-  </ul>
-</form>
+  <!-- todo akicha: change margin for motivational-quotes instead -->
+  <form class="mt-4" [formGroup]="weekProgressForm">
+    <ul>
+      <li *ngFor="let muscleGroup of muscleGroups">
+        <label>
+          <input type="checkbox" [formControlName]="muscleGroup">
+          {{muscleGroup}}
+        </label>
+      </li>
+    </ul>
+  </form>
 
-<button (click)="resetWeekProgress()">Reset Progress</button>
+  <button class="mt-2 px-2 bg-gray-100 text-red-400" (click)="resetWeekProgress()">Reset Progress</button>
+
+</main>
