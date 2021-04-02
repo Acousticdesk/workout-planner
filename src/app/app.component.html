@@ -4,13 +4,15 @@
 
 <!-- todo akicha: add a motivational quote -->
 
-<ul>
-  <li *ngFor="let muscleGroup of muscleGroups">
-    <label>
-      <input type="checkbox" [checked]="weekProgress[muscleGroup]">
-      {{muscleGroup}}
-    </label>
-  </li>
-</ul>
+<form [formGroup]="weekProgressForm">
+  <ul>
+    <li *ngFor="let muscleGroup of muscleGroups">
+      <label>
+        <input type="checkbox" [formControlName]="muscleGroup">
+        {{muscleGroup}}
+      </label>
+    </li>
+  </ul>
+</form>
 
 <button (click)="resetWeekProgress()">Reset Progress</button>
